@@ -67,11 +67,12 @@ document.getElementById("btn2").onclick = function() {
 
 // Question 3
 function smallestNumber() {
-    var min = "";
-    for (var i = 0; i < pushNumber.length; i++) {
-        if (pushNumber[i] < min) {
+    var min = pushNumber[0];
+    for (var i = 1; i < pushNumber.length; i++) {
+        if (min > pushNumber[i]) {
             min = pushNumber[i];
         }
+
     }
     return min;
 }
@@ -135,7 +136,29 @@ function findLastEven(pushNumber) {
 }
 //Question 6
 
+document.getElementById("btn6").onclick = function() {
+    var number1 = document.getElementById("number1").value * 1;
+    var number2 = document.getElementById("number2").value * 1;
+    for (var i = 0; i < pushNumber.length; i++) {
+        if (pushNumber[i]) {
+            for (var j = 0; j < pushNumber.length; j++) {
+                if (pushNumber[j] == number2) {
+                    var temp;
+                    temp = number1;
+                    number1 = number2;
+                    number2 = temp;
+                    pushNumber[i] = number1;
+                    pushNumber[j] = number2;
+                }
+            }
+        }
+    }
+    for (var i = 0; i < pushNumber.length; i++) {
+        return pushNumber[i];
+    }
 
+    document.getElementById("p6").innerHTML = pushNumber;
+}
 
 // Question 7
 
