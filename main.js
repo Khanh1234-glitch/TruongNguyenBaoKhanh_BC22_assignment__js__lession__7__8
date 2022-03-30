@@ -16,7 +16,11 @@ document.getElementById("btn__submit").onclick = function() {
     var h5__8 = "8.Find first prime number in array";
     var h5__9 = "9. Add real number and count interger number"
     var h5__10 = "10.Compare positive numbers and negative numbers";
+    var special__1 = "import number 1";
+    var special__2 = "import number 2";
     document.getElementById("footer__submit").innerHTML = "Your arrange: " + result + " ";
+    document.getElementById("special__1").innerHTML = special__1;
+    document.getElementById("special__2").innerHTML = special__2;
     document.getElementById("texth1").innerHTML = texth1;
     document.getElementById("h5__1").innerHTML = h5__1;
     document.getElementById("h5__2").innerHTML = h5__2;
@@ -32,18 +36,17 @@ document.getElementById("btn__submit").onclick = function() {
 
 
 // Question 1
-
+function suminArray(pushNumber) {
+    var temp = 0;
+    for (var i = 0; i < pushNumber.length; i++) {
+        temp += pushNumber[i];
+    }
+    return temp;
+}
 
 document.getElementById("btn1").onclick = function() {
-    var sum = 0;
-    for (var i = 0; i < pushNumber.length; i++) {
-        if (pushNumber[i] > 1) {
-            sum += pushNumber[i];
-
-        }
-    }
-    var sumNumber = "Sum of positive numbers:  " + sum;
-    document.getElementById("p1").innerHTML = sumNumber;
+    var result = suminArray(pushNumber);
+    document.getElementById("p1").innerHTML = "Sum of positive numbers:  " + result;
 }
 
 
@@ -63,11 +66,17 @@ document.getElementById("btn2").onclick = function() {
 
 
 // Question 3
-
-
+function smallestNumber() {
+    var min = "";
+    for (var i = 0; i < pushNumber.length; i++) {
+        if (pushNumber[i] < min) {
+            min = pushNumber[i];
+        }
+    }
+    return min;
+}
 document.getElementById("btn3").onclick = function() {
-    var minNumber = Math.min.apply(Math, pushNumber);
-    var result = minNumber;
+    var result = smallestNumber(pushNumber);
     document.getElementById("p3").innerHTML = "Smallest number in array is: " + result;
 }
 
@@ -124,6 +133,8 @@ function findLastEven(pushNumber) {
     }
     return -1;
 }
+//Question 6
+
 
 
 // Question 7
