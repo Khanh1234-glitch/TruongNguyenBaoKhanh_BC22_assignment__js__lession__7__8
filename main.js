@@ -218,7 +218,7 @@ document.getElementById("btn8").onclick = function() {
 
 document.getElementById("addNumber").onclick = function() {
     var array = document.getElementById("txtbigCard").value * 1;
-    // Thêm number bào mảng pushNumber
+    // Thêm number vào mảng pushNumber
     pushNumber.push(array);
     var result = pushNumber;
     document.getElementById("p9").innerHTML = "Your arrange: " + result + " ";
@@ -253,7 +253,7 @@ function countPositiveNegative() {
         }
     }
     if (countPositive > countNegative) {
-        var result = "more positve numbers than Negative numbers" + "<br/>" + countPositive + ">" + countNegative;
+        var result = "more positive numbers than Negative numbers" + "<br/>" + countPositive + ">" + countNegative;
     } else if (countPositive < countNegative) {
         result = "more Negative numbers than positive numbers" + "<br/>" + countPositive + "<" + countNegative;
     } else {
