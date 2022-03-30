@@ -257,7 +257,7 @@ function countPositiveNegative() {
     } else if (countPositive < countNegative) {
         result = "more Negative numbers than positive numbers" + "<br/>" + countPositive + "<" + countNegative;
     } else {
-        result = "positive numbers the same like Negative numbers" + "<br/>" + countPositive + "=" + countNegative;
+        result = "positive numbers the equal Negative numbers" + "<br/>" + countPositive + "=" + countNegative;
     }
     return result;
 }
