@@ -12,6 +12,7 @@ document.getElementById("btn__submit").onclick = function() {
     var h5__3 = "3.Find smallest number";
     var h5__4 = "4.Smallest positive number";
     var h5__5 = "5.Find the last even number in array";
+    var h5__6 = "6.Change 2 number in array";
     var h5__7 = "7.Sort array in ascending order";
     var h5__8 = "8.Find first prime number in array";
     var h5__9 = "9. Add real number and count interger number"
@@ -27,6 +28,7 @@ document.getElementById("btn__submit").onclick = function() {
     document.getElementById("h5__3").innerHTML = h5__3;
     document.getElementById("h5__4").innerHTML = h5__4;
     document.getElementById("h5__5").innerHTML = h5__5;
+    document.getElementById("h5__6").innerHTML = h5__6;
     document.getElementById("h5__7").innerHTML = h5__7;
     document.getElementById("h5__8").innerHTML = h5__8;
     document.getElementById("tutorial").innerHTML = tutorial;
@@ -91,7 +93,7 @@ document.getElementById("btn4").onclick = function() {
 function smallestPositiveNumber() {
     var min = "";
     for (var i = 0; i < pushNumber.length; i++) {
-        if (pushNumber[i] > 0) {
+        if (pushNumber[i] >= 0) {
             min = pushNumber[i];
             break;
         }
@@ -135,29 +137,30 @@ function findLastEven(pushNumber) {
     return -1;
 }
 //Question 6
-
 document.getElementById("btn6").onclick = function() {
-    var number1 = document.getElementById("number1").value * 1;
-    var number2 = document.getElementById("number2").value * 1;
+    var position__a = +document.getElementById("number1").value;
+    var position__b = +document.getElementById("number2").value;
+
+    var value__a;
+    var value__b;
+
+
+    var positionofa;
+    var positionofb;
+
     for (var i = 0; i < pushNumber.length; i++) {
-        if (pushNumber[i]) {
-            for (var j = 0; j < pushNumber.length; j++) {
-                if (pushNumber[j] == number2) {
-                    var temp;
-                    temp = number1;
-                    number1 = number2;
-                    number2 = temp;
-                    pushNumber[i] = number1;
-                    pushNumber[j] = number2;
-                }
-            }
+        if (i == position__a) {
+            value__a = pushNumber[i];
+            positionofa = i;
+        } else if (i == position__b) {
+            value__b = pushNumber[i];
+            positionofb = i;
         }
     }
-    for (var i = 0; i < pushNumber.length; i++) {
-        return pushNumber[i];
-    }
 
-    document.getElementById("p6").innerHTML = pushNumber;
+    pushNumber[positionofa] = value__b;
+    pushNumber[positionofb] = value__a;
+    document.getElementById("p6").innerHTML = "after change 2 number: " + pushNumber;
 }
 
 // Question 7
